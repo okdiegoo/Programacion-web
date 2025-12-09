@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Citas Pro - Inicio</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Nuestros estilos personalizados (vinculados) -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Configuración personalizada de Tailwind (Debe ir aquí) -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'primario': '#1E3A5F', // Azul petróleo
+              'acento': '#D4A65A',   // Dorado suave
+              'fondo': '#F3F4F6',    // Gris claro
+              'texto-claro': '#FFFFFF',
+              'texto-oscuro': '#111827',
+            },
+            fontFamily: {
+              'titulo': ['Poppins', 'sans-serif'],
+              'cuerpo': ['Roboto', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-fondo font-cuerpo text-texto-oscuro">
+
+    <!-- 1. Navegación Principal -->
+    <nav class="bg-white shadow-md">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="font-titulo text-2xl font-bold text-primario">
+                GestorPro
+            </a>
+            
+            <!-- Enlaces de Navegación (Desktop) -->
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="#" class="nav-link text-gray-600 hover:text-primario transition-colors">Inicio</a>
+                <a href="#" class="nav-link text-gray-600 hover:text-primario transition-colors">Productos</a>
+                <a href="#" class="nav-link text-gray-600 hover:text-primario transition-colors">Registrarse</a>
+                <a href="#" id="login-btn" class="bg-acento text-white py-2 px-5 rounded-full font-medium hover:bg-opacity-90 transition-all cursor-pointer">
+                    Iniciar Sesión
+                </a>
+            </div>
+
+            <!-- Botón de Menú (Móvil) -->
+            <div class="md:hidden">
+                <button id="mobile-menu-btn" class="text-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Menú Móvil (Oculto por defecto) -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white px-6 pt-2 pb-4">
+            <a href="#" class="block py-2 text-gray-600 hover:text-primario">Inicio</a>
+            <a href="#" class="block py-2 text-gray-600 hover:text-primario">Productos</a>
+            <a href="#" class="block py-2 text-gray-600 hover:text-primario">Registrarse</a>
+            <a href="#" class="block w-full text-center bg-acento text-white mt-2 py-2 px-5 rounded-full font-medium">
+                Iniciar Sesión
+            </a>
+        </div>
+    </nav>
+
+    <!-- El resto del contenido (Hero, Features, Footer) sigue igual -->
+    <!-- (Contenido omitido por brevedad, sigue siendo el mismo que antes) -->
+    
+    <!-- 2. Sección Hero -->
+    <header class="bg-primario text-texto-claro">
+        <div class="container mx-auto px-6 py-24 text-center">
+            <h1 class="font-titulo text-4xl md:text-6xl font-bold mb-4">
+                Gestiona tu negocio y citas fácilmente
+            </h1>
+            <p class="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
+                La herramienta todo-en-uno para estéticas, barberías y profesionales independientes.
+            </p>
+            <a href="#" class="bg-acento text-white py-3 px-8 rounded-full font-bold text-lg hover:bg-opacity-90 transition-all shadow-lg">
+                Comienza Ahora
+            </a>
+        </div>
+    </header>
+
+    <!-- 3. Sección de Características -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="font-titulo text-3xl font-bold text-center text-primario mb-12">
+                Todo lo que necesitas en un solo lugar
+            </h2>
+            <div class="grid md:grid-cols-3 gap-10">
+                <!-- (Las 3 tarjetas de características van aquí, sin cambios) -->
+                <!-- Característica 1 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+                    <div class="flex justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-acento" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                    </div>
+                    <h3 class="font-titulo text-xl font-bold text-primario mb-3">Agenda Online</h3>
+                    <p class="text-gray-600">Permite que tus clientes reserven 24/7 y organiza tu calendario automáticamente.</p>
+                </div>
+                <!-- Característica 2 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+                    <div class="flex justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-acento" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" /></svg>
+                    </div>
+                    <h3 class="font-titulo text-xl font-bold text-primario mb-3">Gestión de Ventas</h3>
+                    <p class="text-gray-600">Registra ventas de servicios y productos al instante. Controla tu caja desde la app.</p>
+                </div>
+                <!-- Característica 3 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+                    <div class="flex justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-acento" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /></svg>
+                    </div>
+                    <h3 class="font-titulo text-xl font-bold text-primario mb-3">Catálogo de Productos</h3>
+                    <p class="text-gray-600">Muestra tus productos en línea y controla tu inventario de forma sencilla.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Footer -->
+    <footer class="bg-primario text-texto-claro mt-12">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <a href="#" class="font-titulo text-2xl font-bold">
+                GestorPro
+            </a>
+            <p class="mt-4 text-sm text-gray-300">
+                &copy; 2025 GestorPro. Todos los derechos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Nuestro script (vinculado). 'defer' asegura que se carga después del HTML. -->
+    <script src="app.js" defer></script>
+</body>
+</html>

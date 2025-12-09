@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - GestorPro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Configuración de Tailwind (Misma que en index.html para consistencia) -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'primario': '#1E3A5F',
+              'acento': '#D4A65A',
+              'fondo': '#F3F4F6',
+              'texto-claro': '#FFFFFF',
+              'texto-oscuro': '#111827',
+            },
+            fontFamily: {
+              'titulo': ['Poppins', 'sans-serif'],
+              'cuerpo': ['Roboto', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-fondo font-cuerpo text-texto-oscuro min-h-screen flex items-center justify-center px-4">
+
+    <div class="bg-white p-8 rounded-lg shadow-xl w-full max-w-md">
+        <!-- Header del Formulario -->
+        <div class="text-center mb-8">
+            <a href="index.html" class="font-titulo text-3xl font-bold text-primario block mb-2">
+                GestorPro
+            </a>
+            <h2 class="text-gray-500 text-sm uppercase tracking-wide">Bienvenido de nuevo</h2>
+        </div>
+
+        <!-- Formulario de Login -->
+        <form id="login-form" class="space-y-6">
+            
+            <!-- Campo Email -->
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Correo Electrónico</label>
+                <input type="email" id="email" name="email" required placeholder="tu@email.com"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primario focus:border-primario outline-none transition-all">
+            </div>
+
+            <!-- Campo Contraseña -->
+            <div>
+                <div class="flex justify-between items-center mb-1">
+                    <label for="password" class="block text-sm font-medium text-gray-700">Contraseña</label>
+                    <a href="#" class="text-xs text-acento hover:underline">¿Olvidaste tu contraseña?</a>
+                </div>
+                <input type="password" id="password" name="password" required placeholder="••••••••"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primario focus:border-primario outline-none transition-all">
+            </div>
+
+            <!-- Botón de Acción -->
+            <button type="submit" 
+                class="w-full bg-primario text-white font-bold py-3 rounded-lg hover:bg-opacity-90 transition-all transform active:scale-95 shadow-lg">
+                Iniciar Sesión
+            </button>
+        </form>
+
+        <!-- Pie de página del Formulario -->
+        <div class="mt-8 text-center text-sm text-gray-600">
+            ¿No tienes una cuenta? 
+            <a href="#" class="font-bold text-primario hover:underline">Regístrate aquí</a>
+        </div>
+        
+        <div class="mt-4 text-center">
+             <a href="index.html" class="text-xs text-gray-400 hover:text-gray-600">← Volver al inicio</a>
+        </div>
+    </div>
+
+    <script src="app.js" defer></script>
+</body>
+</html>

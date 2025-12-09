@@ -1,0 +1,21 @@
+/* 1. Importación de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500&display=swap');
+
+/* 2. Estilos Globales
+    Podemos usar @apply de Tailwind para definir estilos base si quisiéramos,
+    pero por ahora, solo confirmamos que la fuente 'cuerpo' (Roboto) 
+    se aplique globalmente, tal como lo configuramos en Tailwind.
+*/
+body {
+    /* Esto es manejado por la clase 'font-cuerpo' en el HTML, 
+       pero es un buen lugar para poner estilos de 'fallback' o globales. */
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Podemos añadir cualquier estilo personalizado aquí.
+  Por ejemplo, si queremos una transición suave en TODOS los enlaces
+  que tengan la clase 'nav-link'.
+*/
+.nav-link {
+    transition: all 0.2s ease-in-out;
+}

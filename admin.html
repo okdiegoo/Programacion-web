@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Control - GestorPro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'primario': '#1E3A5F',
+              'acento': '#D4A65A',
+              'fondo': '#F3F4F6',
+              'texto-claro': '#FFFFFF',
+              'texto-oscuro': '#111827',
+            },
+            fontFamily: {
+              'titulo': ['Poppins', 'sans-serif'],
+              'cuerpo': ['Roboto', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-fondo font-cuerpo text-texto-oscuro flex h-screen overflow-hidden">
+
+    <!-- 1. SIDEBAR (Barra Lateral) -->
+    <!-- En móvil está oculta por defecto (-translate-x-full), en desktop es fija -->
+    <aside id="sidebar" class="bg-white w-64 space-y-6 py-7 px-2 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out shadow-xl z-20 flex flex-col justify-between">
+        
+        <!-- Logo y Menú -->
+        <div>
+            <a href="#" class="text-primario flex items-center space-x-2 px-4 mb-10">
+                <span class="text-2xl font-bold font-titulo">GestorPro</span>
+            </a>
+
+            <nav class="space-y-2">
+                <a href="#" class="block py-2.5 px-4 rounded transition duration-200 bg-primario text-white hover:bg-opacity-90">
+                    <span class="flex items-center space-x-2">
+                        <!-- Icono Dashboard -->
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
+                        <span>Panel Principal</span>
+                    </span>
+                </a>
+                <a href="agenda.html" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-100 text-gray-600 hover:text-primario">
+                    <span class="flex items-center space-x-2">
+                        <!-- Icono Calendario -->
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        <span>Agenda</span>
+                    </span>
+                </a>
+                <a href="productos.html" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-100 text-gray-600 hover:text-primario">
+                    <span class="flex items-center space-x-2">
+                        <!-- Icono Caja/Productos -->
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                        <span>Productos</span>
+                    </span>
+                </a>
+                <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-100 text-gray-600 hover:text-primario">
+                    <span class="flex items-center space-x-2">
+                        <!-- Icono Ventas -->
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span>Ventas</span>
+                    </span>
+                </a>
+            </nav>
+        </div>
+
+        <!-- Botón Salir -->
+        <div class="px-4">
+            <a href="index.html" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-red-50 text-red-600 font-medium">
+                <span class="flex items-center space-x-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
+                    <span>Cerrar Sesión</span>
+                </span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- 2. CONTENIDO PRINCIPAL -->
+    <div class="flex-1 flex flex-col h-screen overflow-hidden relative">
+        
+        <!-- Header Superior -->
+        <header class="bg-white shadow-sm z-10 p-4 flex justify-between items-center">
+            <!-- Botón Hamburguesa (Solo Móvil) -->
+            <button id="sidebar-toggle" class="text-gray-500 focus:outline-none md:hidden p-2 rounded-md hover:bg-gray-100">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+            
+            <h2 class="text-xl font-bold text-gray-700 hidden md:block">Dashboard</h2>
+
+            <!-- Perfil Usuario -->
+            <div class="flex items-center space-x-3">
+                <span class="text-sm text-gray-600 font-medium hidden sm:block">Admin Usuario</span>
+                <div class="h-8 w-8 rounded-full bg-primario text-white flex items-center justify-center font-bold">A</div>
+            </div>
+        </header>
+
+        <!-- Área de Scroll -->
+        <main class="flex-1 overflow-x-hidden overflow-y-auto bg-fondo p-6">
+            
+            <!-- Estadísticas (Widgets) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <!-- Tarjeta 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-acento">
+                    <div class="flex items-center">
+                        <div class="p-3 rounded-full bg-yellow-100 text-acento">
+                            <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <div class="ml-4">
+                            <p class="mb-2 text-sm font-medium text-gray-600">Citas Hoy</p>
+                            <p class="text-lg font-bold text-gray-700">5 Pendientes</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tarjeta 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-green-500">
+                    <div class="flex items-center">
+                        <div class="p-3 rounded-full bg-green-100 text-green-500">
+                            <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <div class="ml-4">
+                            <p class="mb-2 text-sm font-medium text-gray-600">Ventas Hoy</p>
+                            <p class="text-lg font-bold text-gray-700">$1,250.00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-blue-500">
+                    <div class="flex items-center">
+                        <div class="p-3 rounded-full bg-blue-100 text-blue-500">
+                            <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                        </div>
+                        <div class="ml-4">
+                            <p class="mb-2 text-sm font-medium text-gray-600">Clientes Nuevos</p>
+                            <p class="text-lg font-bold text-gray-700">+3 esta semana</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabla de Próximas Citas -->
+            <div class="bg-white rounded-lg shadow-sm mb-8">
+                <div class="px-6 py-4 border-b border-gray-100 flex justify-between items-center">
+                    <h3 class="font-bold text-gray-700 text-lg">Próximas Citas</h3>
+                    <button class="text-sm text-acento font-medium hover:underline">Ver Agenda Completa</button>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full whitespace-nowrap">
+                        <thead class="bg-gray-50">
+                            <tr class="text-left text-xs font-semibold tracking-wide text-gray-500 uppercase border-b">
+                                <th class="px-6 py-3">Hora</th>
+                                <th class="px-6 py-3">Cliente</th>
+                                <th class="px-6 py-3">Servicio</th>
+                                <th class="px-6 py-3">Estado</th>
+                                <th class="px-6 py-3">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100">
+                            <!-- Fila 1 -->
+                            <tr class="hover:bg-gray-50 transition">
+                                <td class="px-6 py-4 text-sm font-bold text-gray-700">10:00 AM</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">Juan Pérez</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">Corte Caballero</td>
+                                <td class="px-6 py-4">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                        Confirmada
+                                    </span>
+                                </td>
+                                <td class="px-6 py-4 text-sm">
+                                    <button class="text-blue-600 hover:text-blue-900 mr-2">Detalles</button>
+                                </td>
+                            </tr>
+                            <!-- Fila 2 -->
+                            <tr class="hover:bg-gray-50 transition">
+                                <td class="px-6 py-4 text-sm font-bold text-gray-700">11:30 AM</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">María López</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">Tinte Completo</td>
+                                <td class="px-6 py-4">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">
+                                        Pendiente
+                                    </span>
+                                </td>
+                                <td class="px-6 py-4 text-sm">
+                                    <button class="text-blue-600 hover:text-blue-900 mr-2">Detalles</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Script principal -->
+    <script src="app.js"></script>
+</body>
+</html>
